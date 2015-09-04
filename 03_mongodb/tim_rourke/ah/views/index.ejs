@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/vendor.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+		<table>
+			<caption>Tasks</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Completed?</th>
+					<th>Done</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody id="tasks"></tbody>
+		</table>
+
+		<form action="/api/tasks" method="post" id="newTaskForm">
+			<input type="text" name="name" placeholder="name">
+			<input type="text" name="description" placeholder="description">
+			<input type="submit">
+		</form>
+
+		<script type="text/template" id="taskTemplate">
+			<td><%%= name %></td>
+			<td><%%= description %></td>
+			<td><%%= completed %></td>
+			<td><a class="done" href="#done">Done</a></td>
+			<td><a class="delete" href="#delete">Delete</a></td>
+		</script>
+
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+  </body>
+</html>
