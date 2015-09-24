@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appLab">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+
+
+</head>
+<body ng-controller="TurtlesController">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>Teenage Mutant Ninja Turtles!</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Color</th>
+              <th>Weapon</th>
+              <th>Picture</th>
+              <th># Killed</th>
+              <th>Kill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="turtle in turtleNames">
+              <td>{{ turtle }}</td>
+              <td>{{ turtles[turtle].color }}</td>
+              <td>{{ turtles[turtle].weapon }}</td>
+              <td><img ng-src="{{ turtles[turtle].picture }}" style="width: 200px;" /></td>
+              <td>{{ turtles[turtle].killed }}</td>
+              <td><button ng-click="killCount(turtle, 1)">Kill a Foot Soldier</button></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
