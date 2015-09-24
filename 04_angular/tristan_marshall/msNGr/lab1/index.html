@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="lab1">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+
+    <header ng-controller="HeaderController">
+      <h1> {{ mainTitle }} </h1>
+      <h2> {{ tagLine }} </h2>
+    </header>
+
+  <div ng-controller="PersonController">
+    <article ng-repeat="person in persons">
+       <h3>Name: {{ person.name }}</h3>
+      <h3>Occupation: {{ person.occupation }}</h3>
+      <h3>Car: {{ person.car }}</h3>
+      <h3>Tattooes: {{ person.tattoos }}</h3>
+      <h3>Favorite Band: {{ person.favoriteBand }}</h3>
+      <h3>Marital Status: {{ person.maritalStatus }}</h3>
+      <h3>Favorite Beer: {{ person.favoriteBeer}}</h3>
+
+
+    </article>
+
+  </div>
+
+  </body>
+</html>
